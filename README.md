@@ -1,5 +1,7 @@
-dbf-parser
+node-dbf
 ========
+
+**This fork has been modified to work with Visual Foxpro**
 
 This is an event-based dBase file parser for very efficiently reading data from *.dbf files.
 
@@ -8,56 +10,56 @@ F.e. correct work with VMap0 geonames base (http://gis-lab.info/data/vmap0-settl
 
 To get started, simply install the module using npm:
 
-    npm install dbf-parser
+    npm install @filip96/node-dbf
 
 and then `require` it:
 
-    var Parser = require('dbf-parser');
+    const Parser = require('@filip96/node-dbf');
 
-#Classes
+# Classes
 
 There are two classes - the `Parser` and the `Header`. The `Parser` is the most interesting class.
 
-##Parser
+## Parser
 
 This class is the main interface for reading data from dBase files. It extends `EventEmitter` and its output is via events.
 
-###new Parser(path)
+### new Parser(path)
 
 * path `String` The full path to the .dbf file to parse
 
 Creates a new Parser and attaches it to the specified filename.
 
-    var Parser = require('node-dbf');
+    const Parser = require('@filip96/node-dbf');
     
-    var parser = new Parser('/path/to/my/dbase/file.dbf');
+    let parser = new Parser('/path/to/my/dbase/file.dbf');
 
-###parser.on(event, listener)
+### parser.on(event, listener)
 
 * event `String` The event name to listen for (see below for details)
 * listener `Function` The callback to bind to the event
 
 This method is inherited from the `EventEmitter` class.
 
-###parser.parse()
+### parser.parse()
 
 Call this method once you have bound to the events you are interested in. Although it returns the parser object (for chaining), all the dBase data is outputted via events.
 
     parser.parse();
 
-###Event: 'start'
+### Event: 'start'
 
 * parser `Parser` The parser object
 
 This event is emitted as soon as the `parser.parse()` method has been invoked.
 
-###Event: 'header'
+### Event: 'header'
 
 * header `Header` The header object as parsed from the dBase file
 
 This event is emitted once the header has been parsed from the dBase file
 
-###Event: 'record'
+### Event: 'record'
 
 * record `Object` An object representing the record that has been found
 
@@ -77,19 +79,19 @@ This object may look like:
         "lastName": "Smith
     }
 
-###Event: 'end'
+### Event: 'end'
 
 * parser `Parser` The parser object
 
 This event is fired once the dBase parsing is complete and there are no more records remaining.
 
-##Usage
+## Usage
 
 The following code example illustrates a very simple usage for this module:
 
-    var Parser = require('node-dbf');
+    const Parser = require('@filip96/node-dbf');
     
-    var parser = new Parser('/path/to/my/dbase/file.dbf');
+    let parser = new Parser('/path/to/my/dbase/file.dbf');
     
     parser.on('start', function(p) {
         console.log('dBase file parsing has started');
@@ -109,7 +111,7 @@ The following code example illustrates a very simple usage for this module:
     
     parser.parse();
 
-#TODO
+# TODO
 
 * Write some tests
 * Add support for field types other than Character and Numeric
