@@ -19,10 +19,11 @@ Header.prototype.parse = function(callback) {
             throw err;
         }
         self.type = (buffer.slice(0, 1)).toString('utf-8');
+        console.log(self);
         self.dateUpdated = self.parseDate(buffer.slice(1, 4));
-        self.numberOfRecords = self.convertBinaryToInteger(buffer.slice(4, 8));
-        self.start = self.convertBinaryToInteger(buffer.slice(8, 10));
-        self.recordLength = self.convertBinaryToInteger(buffer.slice(10, 12));
+        self.numberOfRecords = buffer.readUInt32LE(4);
+        self.start = buffer.readUInt16LE(8);
+        self.recordLength = buffer.readUInt16LE(10);
         self.fields = ((function() {
             var _i, _ref, _results;
             _results = [];
@@ -37,10 +38,9 @@ Header.prototype.parse = function(callback) {
 
 Header.prototype.parseDate = function(buffer) {
     var day, month, year;
-    console.log(this.convertBinaryToInteger(buffer.slice(0, 1)));
-    year = 1900 + this.convertBinaryToInteger(buffer.slice(0, 1));
-    month = (this.convertBinaryToInteger(buffer.slice(1, 2))) - 1;
-    day = this.convertBinaryToInteger(buffer.slice(2, 3));
+    year = 2000 + buffer.readUIntLE(0, 1)
+    month = buffer.readUIntLE(1, 1) - 1;
+    day = buffer.readUIntLE(2, 1);
     return new Date(year, month, day);
 };
 
@@ -57,7 +57,7 @@ Header.prototype.parseFieldSubRecord = function(buffer) {
 };
 
 Header.prototype.convertBinaryToInteger = function(buffer) {
-    return buffer.readInt32LE(0, true);
+    return buffer.readUIntBE(0, buffer.length);
 };
 
 
