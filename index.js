@@ -19,7 +19,6 @@ Header.prototype.parse = function(callback) {
             throw err;
         }
         self.type = (buffer.slice(0, 1)).toString('utf-8');
-        console.log(self);
         self.dateUpdated = self.parseDate(buffer.slice(1, 4));
         self.numberOfRecords = buffer.readUInt32LE(4);
         self.start = buffer.readUInt16LE(8);
