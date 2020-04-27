@@ -102,7 +102,7 @@ The following code example illustrates a very simple usage for this module:
     });
     
     parser.on('record', function(record) {
-        console.log('Name: ' + record.firstName + ' ' + record.lastName); # Name: John Smith
+        console.log('Name: ' + record.firstName + ' ' + record.lastName); // Name: John Smith
     });
     
     parser.on('end', function(p) {
