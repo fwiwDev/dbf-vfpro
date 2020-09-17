@@ -120,8 +120,13 @@ Parser.prototype.parseField = function(field, buffer) {
 
     if (field.type === 'N') {
         value = Number(value);
+    }    
+    if (field.type === 'I') {
+        value = buffer.readUIntLE(0, buffer.byteLength)
     }
+
     return value;
+
 };
 
 module.exports = Parser;
