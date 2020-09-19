@@ -4,7 +4,7 @@
 
 This is an event-based dBase file parser for very efficiently reading data from Visual FoxPro \*.dbf files.
 
-Based on https://github.com/abstractvector/dbf-vfpro but works without coffee and provide float type of numbers. It also includes the ability to parse Integers, based on the specification for DBF files here: http://www.independent-software.com/dbase-dbf-dbt-file-format.html
+Based on https://github.com/abstractvector/node-dbf but works without coffee and provides float and integer type of numbers, specifically for Visual Fox Pro \*dbf files, based on the specification for DBF files here: http://www.independent-software.com/dbase-dbf-dbt-file-format.html
 
 To get started, simply install the module using npm:
 
