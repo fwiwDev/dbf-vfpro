@@ -8,11 +8,11 @@ Based on https://github.com/abstractvector/dbf-vfpro but works without coffee an
 
 To get started, simply install the module using npm:
 
-    npm install fwiw/dbf-vfpro
+    npm install dbf-vfpro
 
 and then `require` it:
 
-    const Parser = require('fwiw/dbf-vfpro');
+    const Parser = require('dbf-vfpro');
 
 # Classes
 
@@ -28,7 +28,7 @@ This class is the main interface for reading data from dBase files. It extends `
 
 Creates a new Parser and attaches it to the specified filename.
 
-    const Parser = require('fwiw/dbf-vfpro');
+    const Parser = require('dbf-vfpro');
 
     let parser = new Parser('/path/to/my/dbase/file.dbf');
 
@@ -87,7 +87,7 @@ This event is fired once the dBase parsing is complete and there are no more rec
 
 The following code example illustrates a very simple usage for this module:
 
-    const Parser = require('fwiw/dbf-vfpro');
+    const Parser = require('dbf-vfpro');
 
     let parser = new Parser('/path/to/my/dbase/file.dbf');
 
