@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/fwiwDev/node-dbf.git"
   },
-  "author": "Filip96",
+  "author": "fwiwDev",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/fwiwDev/node-dbf/issues"
