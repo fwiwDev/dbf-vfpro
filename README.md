@@ -1,18 +1,18 @@
-# node-dbf
+# dbf-vfpro
 
 **This fork has been modified to work with Visual Foxpro and Integer values**
 
-This is an event-based dBase file parser for very efficiently reading data from \*.dbf files.
+This is an event-based dBase file parser for very efficiently reading data from Visual FoxPro \*.dbf files.
 
-Based on https://github.com/abstractvector/node-dbf but works without coffee and provide float type of numbers. It also includes the ability to parse Integers, based on the specification for DBF files here: http://www.independent-software.com/dbase-dbf-dbt-file-format.html
+Based on https://github.com/abstractvector/dbf-vfpro but works without coffee and provide float type of numbers. It also includes the ability to parse Integers, based on the specification for DBF files here: http://www.independent-software.com/dbase-dbf-dbt-file-format.html
 
 To get started, simply install the module using npm:
 
-    npm install fwiw/node-dbf
+    npm install fwiw/dbf-vfpro
 
 and then `require` it:
 
-    const Parser = require('fwiw/node-dbf');
+    const Parser = require('fwiw/dbf-vfpro');
 
 # Classes
 
@@ -28,7 +28,7 @@ This class is the main interface for reading data from dBase files. It extends `
 
 Creates a new Parser and attaches it to the specified filename.
 
-    const Parser = require('fwiw/node-dbf');
+    const Parser = require('fwiw/dbf-vfpro');
 
     let parser = new Parser('/path/to/my/dbase/file.dbf');
 
@@ -87,7 +87,7 @@ This event is fired once the dBase parsing is complete and there are no more rec
 
 The following code example illustrates a very simple usage for this module:
 
-    const Parser = require('fwiw/node-dbf');
+    const Parser = require('fwiw/dbf-vfpro');
 
     let parser = new Parser('/path/to/my/dbase/file.dbf');
 

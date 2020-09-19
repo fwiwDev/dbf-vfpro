@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fwiwDev/node-dbf.git"
+    "url": "git+https://github.com/fwiwDev/dbf-vfpro.git"
   },
   "author": "fwiwDev",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/fwiwDev/node-dbf/issues"
+    "url": "https://github.com/fwiwDev/dbf-vfpro/issues"
   },
-  "homepage": "https://github.com/fwiwDev/node-dbf#readme"
+  "homepage": "https://github.com/fwiwDev/dbf-vfpro#readme"
 }
