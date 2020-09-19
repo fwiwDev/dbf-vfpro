@@ -73,9 +73,6 @@ Parser.prototype.parse = function () {
   this.emit('start', this)
   this.header = new Header(this.filename)
   this.header.parse(function (err) {
-    if (err) {
-      throw err
-    }
     var sequenceNumber
     self.emit('header', self.header)
     sequenceNumber = 0
