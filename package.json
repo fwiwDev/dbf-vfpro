@@ -1,6 +1,6 @@
 {
-  "name": "@filip96/node-dbf",
-  "version": "1.0.2",
+  "name": "fwiwDev/node-dbf",
+  "version": "1.0.0",
   "description": "dbf-parser\r ========",
   "main": "index.js",
   "scripts": {
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Filip9696/node-dbf.git"
+    "url": "git+https://github.com/fwiwDev/node-dbf.git"
   },
   "author": "Filip96",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Filip9696/node-dbf/issues"
+    "url": "https://github.com/fwiwDev/node-dbf/issues"
   },
-  "homepage": "https://github.com/Filip9696/node-dbf#readme"
+  "homepage": "https://github.com/fwiwDev/node-dbf#readme"
 }
